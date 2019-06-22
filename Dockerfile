@@ -6,8 +6,6 @@
 FROM ubuntu
 MAINTAINER Björn Gernert <mail@bjoern-gernert.de>
 
-USER 1026:100
-
 ADD https://download-cdn.resilio.com/2.6.3/linux-x64/resilio-sync_x64.tar.gz /tmp/sync.tgz
 RUN tar -xf /tmp/sync.tgz -C /usr/bin rslsync && rm -f /tmp/sync.tgz
 
@@ -16,6 +14,8 @@ COPY run_sync /usr/bin/
 
 EXPOSE 8888
 EXPOSE 55555
+
+USER 1026:100
 
 VOLUME /mnt/sync
 
