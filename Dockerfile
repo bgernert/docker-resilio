@@ -1,10 +1,8 @@
 # Resilio Sync
-#
-# VERSION               0.1
-#
+FROM ubuntu:latest
 
-FROM ubuntu
-MAINTAINER Björn Gernert <mail@bjoern-gernert.de>
+# Maintainer
+LABEL maintainer="Björn Gernert <mail@bjoern-gernert.de>"
 
 ADD https://download-cdn.resilio.com/stable/linux-x64/resilio-sync_x64.tar.gz /tmp/sync.tgz
 RUN tar -xf /tmp/sync.tgz -C /usr/bin rslsync && rm -f /tmp/sync.tgz
